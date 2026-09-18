@@ -7,10 +7,10 @@ export const Route = createFileRoute("/")({
       { title: "Eduno" },
       {
         name: "description",
-        content: "Declaração de cursando da Faculdade Iguaçu.",
+        content: "Declaração de conclusão da Faculdade Iguaçu.",
       },
-      { property: "og:title", content: "Declaração de Cursando | Faculdade Iguaçu" },
-      { property: "og:description", content: "Declaração de cursando da Faculdade Iguaçu." },
+      { property: "og:title", content: "Declaração de Conclusão | Faculdade Iguaçu" },
+      { property: "og:description", content: "Declaração de conclusão da Faculdade Iguaçu." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -36,7 +36,7 @@ function Index() {
         </header>
 
         <div className="declaration-copy">
-          <h1>DECLARAÇÃO DE CURSANDO</h1>
+          <h1>DECLARAÇÃO DE CONCLUSÃO</h1>
           <p className="course-line">
             <span>Curso: </span>
             <strong>PREVENÇÃO E COMBATE A INCÊNDIOS FLORESTAIS</strong>
