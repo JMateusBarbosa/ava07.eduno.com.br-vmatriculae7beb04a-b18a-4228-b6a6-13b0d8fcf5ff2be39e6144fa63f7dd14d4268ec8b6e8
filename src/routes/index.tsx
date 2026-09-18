@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Lightbulb } from "lucide-react";
 import logoAsset from "../assets/logo-iguacu-hd.png.asset.json";
 import portraitAsset from "../assets/professora.jpg.asset.json";
 
@@ -51,10 +52,12 @@ function Index() {
         </div>
 
         <footer className="platform-footer">
-          <span className="bulb" aria-hidden="true">●</span>
-          <span className="eduno">EdunoEAD</span>
-          <span className="powered">powered by</span>
-          <span className="hotsystems">hot<span>systems</span></span>
+          <div className="platform-footer-content">
+            <Lightbulb className="footer-bulb" aria-hidden="true" />
+            <span className="eduno">EdunoEAD</span>
+            <span className="powered">powered by</span>
+            <span className="hotsystems"><strong>hot</strong><span>systems</span></span>
+          </div>
         </footer>
       </section>
     </main>
