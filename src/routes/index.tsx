@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Lightbulb } from "lucide-react";
-import logoAsset from "../assets/logo-iguacu-hd.png.asset.json";
-import portraitAsset from "../assets/professora.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -24,7 +22,7 @@ function Index() {
   return (
     <main className="certificate-page">
       <aside className="portrait-panel" aria-label="Retrato institucional">
-        <img src={portraitAsset.url} alt="Professora em uma sala de aula" />
+        <img src="/professora.webp" alt="Professora em uma sala de aula" />
       </aside>
 
       <section className="declaration-panel">
@@ -34,7 +32,7 @@ function Index() {
             <p className="institution-document">CNPJ 18.739.510/0001-40</p>
             <p className="institution-address">AV BOTUCARIS, 1590, CENTRO, CAPANEMA, PR</p>
           </div>
-          <img className="institution-logo" src={logoAsset.url} alt="Faculdade Iguaçu" />
+          <img className="institution-logo" src="/logo-iguacu.webp" alt="Faculdade Iguaçu" />
         </header>
 
         <div className="declaration-copy">
