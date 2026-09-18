@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logoAsset from "../assets/logo-iguacu.png.asset.json";
+import logoAsset from "../assets/logo-iguacu-hd.png.asset.json";
 import portraitAsset from "../assets/professora.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Declaração de Cursando | Faculdade Iguaçu" },
+      { title: "Eduno" },
       {
         name: "description",
         content: "Declaração de cursando da Faculdade Iguaçu.",
