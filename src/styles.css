@@ -311,55 +311,58 @@
     .declaration-panel {
       height: auto;
       min-height: 100svh;
-      padding: 67px 16vw 95px;
+      padding: 50px 13.2vw 36px;
     }
 
     .institution-heading {
       display: flex;
       flex-direction: column;
-      gap: 29px;
+      gap: 31px;
     }
 
     .institution-name {
-      font-size: 22px;
-      line-height: 1.38;
+      font-size: 15px;
+      line-height: 1.35;
     }
 
     .institution-document {
       margin-top: 0 !important;
-      font-size: 21px;
-      line-height: 1.45;
+      font-size: 15px;
+      line-height: 1.4;
     }
 
     .institution-address {
-      margin-top: 8px !important;
-      font-size: 14px;
-      line-height: 1.4;
+      margin-top: 5px !important;
+      font-size: 11px;
+      line-height: 1.35;
       white-space: nowrap;
     }
 
     .institution-logo {
       position: static;
-      width: 100%;
-      max-width: 390px;
-      margin: 0 0 0 4%;
+      width: calc(100% + 16px);
+      max-width: none;
+      height: 100px;
+      margin: 0 0 0 -19px;
+      object-fit: cover;
+      object-position: center 55%;
     }
 
     .declaration-copy {
-      margin-top: 61px;
+      margin-top: 45px;
     }
 
     .declaration-copy h1 {
-      max-width: 420px;
-      font-size: 43px;
-      line-height: 1.12;
-      letter-spacing: -0.35px;
+      max-width: 100%;
+      font-size: 30px;
+      line-height: 1.18;
+      letter-spacing: -0.25px;
     }
 
     .course-line {
-      margin-top: 25px;
-      font-size: 30px;
-      line-height: 1.42;
+      margin-top: 16px;
+      font-size: 25px;
+      line-height: 1.25;
       white-space: normal;
     }
 
@@ -369,9 +372,9 @@
     }
 
     .student-data {
-      margin-top: 28px;
-      font-size: 24px;
-      line-height: 1.5;
+      margin-top: 25px;
+      font-size: 15px;
+      line-height: 1.4;
     }
 
     .student-data div {
@@ -379,76 +382,81 @@
     }
 
     .student-data div:last-child dd {
-      width: 100%;
+      width: auto;
     }
 
     .platform-footer {
-      left: auto;
-      right: 16vw;
-      bottom: 13px;
-      width: 68vw;
-      height: 53px;
+      position: static;
+      width: 100%;
+      height: 34px;
+      margin-top: 114px;
     }
 
     .platform-footer-content {
       justify-content: center;
       padding-right: 0;
-      gap: 5px;
-      font-size: 16px;
+      gap: 4px;
+      font-size: 11px;
     }
 
     .footer-bulb {
-      width: 15px;
-      height: 15px;
-      margin-right: 6px;
+      width: 10px;
+      height: 10px;
+      margin-right: 4px;
     }
 
     .hotsystems {
-      font-size: 16px;
+      font-size: 11px;
     }
   }
 
   @media (max-width: 420px) {
     .declaration-panel {
-      padding-left: 11vw;
-      padding-right: 11vw;
+      padding-left: 12.5vw;
+      padding-right: 12.5vw;
     }
 
-    .institution-name {
-      font-size: 19px;
-    }
-
+    .institution-name,
     .institution-document {
-      font-size: 18px;
+      font-size: 14px;
     }
 
     .institution-address {
-      font-size: 11px;
+      font-size: 10px;
+    }
+
+    .institution-logo {
+      width: calc(100% + 14px);
+      height: 92px;
+      margin-left: -17px;
+    }
+
+    .declaration-copy {
+      margin-top: 40px;
     }
 
     .declaration-copy h1 {
-      font-size: 36px;
+      font-size: 28px;
     }
 
     .course-line {
-      font-size: 25px;
+      font-size: 23px;
     }
 
     .student-data {
-      font-size: 20px;
+      font-size: 14px;
     }
 
     .platform-footer {
-      right: 11vw;
-      width: 78vw;
+      margin-top: 104px;
+      height: 32px;
     }
 
     .platform-footer-content,
     .hotsystems {
-      font-size: 13px;
+      font-size: 10px;
     }
-  }
-}
+  }}
 
 
 @media (max-width: 700px) {
