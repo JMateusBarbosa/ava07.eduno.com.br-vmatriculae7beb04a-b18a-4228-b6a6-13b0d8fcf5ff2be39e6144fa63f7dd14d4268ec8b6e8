@@ -88,10 +88,10 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
-  --certificate-surface: oklch(0.965 0 0);
-  --certificate-text: oklch(0.62 0.005 245);
-  --course: oklch(0.71 0.12 222);
-  --footer-surface: oklch(0.845 0 0);
+  --certificate-surface: #f0f0f0;
+  --certificate-text: #909090;
+  --course: #4db5d6;
+  --footer-surface: #d0d0d0;
   --brand-yellow: oklch(0.92 0.2 101);
 }
 
@@ -109,11 +109,14 @@
   html,
   body,
   #root {
+    width: 100%;
+    height: 100%;
     min-height: 100%;
   }
 
   body {
     margin: 0;
+    overflow: hidden;
     background-color: var(--certificate-surface);
     color: var(--certificate-text);
     font-family: var(--font-sans);
@@ -123,7 +126,9 @@
 
 @layer components {
   .certificate-page {
-    min-height: 100svh;
+    width: 100%;
+    height: 100vh;
+    min-height: 0;
     display: grid;
     grid-template-columns: 33.45% 66.55%;
     background: var(--certificate-surface);
@@ -131,7 +136,8 @@
   }
 
   .portrait-panel {
-    min-height: 100svh;
+    height: 100%;
+    min-height: 0;
     overflow: hidden;
   }
 
@@ -146,16 +152,14 @@
   .declaration-panel {
     position: relative;
     min-width: 0;
-    min-height: 100svh;
-    padding: 54px 4.1vw 92px 2.85vw;
+    height: 100%;
+    min-height: 0;
+    padding: 54px 4.1vw 56px 3.05vw;
     color: var(--certificate-text);
   }
 
   .institution-heading {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: start;
-    gap: 40px;
+    display: block;
   }
 
   .institution-copy p {
@@ -183,14 +187,17 @@
   }
 
   .institution-logo {
-    width: clamp(250px, 17.7vw, 338px);
+    position: absolute;
+    top: 7px;
+    right: 3.2vw;
+    width: clamp(280px, 19.7vw, 378px);
     height: auto;
-    margin-top: 18px;
+    margin: 0;
     object-fit: contain;
   }
 
   .declaration-copy {
-    margin-top: 105px;
+    margin-top: 70px;
   }
 
   .declaration-copy h1 {
@@ -202,8 +209,8 @@
   }
 
   .course-line {
-    margin: 24px 0 0;
-    font-size: clamp(27px, 1.67vw, 32px);
+    margin: 18px 0 0;
+    font-size: clamp(28px, 1.78vw, 34px);
     line-height: 1.18;
     font-weight: 300;
     white-space: nowrap;
@@ -215,7 +222,7 @@
   }
 
   .student-data {
-    margin: 25px 0 0;
+    margin: 10px 0 0;
     font-size: 17px;
     line-height: 1.48;
   }
@@ -241,25 +248,25 @@
     left: 0;
     right: 0;
     bottom: 0;
-    height: 54px;
+    height: 32px;
     background: var(--footer-surface);
   }
 
   .platform-footer-content {
     height: 100%;
-    padding-right: 4.5vw;
+    padding-right: 2vw;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 5px;
-    font-size: 13px;
+    gap: 4px;
+    font-size: 11px;
     white-space: nowrap;
   }
 
   .footer-bulb {
-    width: 14px;
-    height: 14px;
-    margin-right: 5px;
+    width: 11px;
+    height: 11px;
+    margin-right: 4px;
     color: var(--brand-yellow);
     fill: var(--brand-yellow);
     stroke-width: 1.6;
@@ -276,7 +283,7 @@
   }
 
   .hotsystems {
-    font-size: 13px;
+    font-size: 11px;
   }
 
   .hotsystems strong {
@@ -292,6 +299,7 @@
   @media (max-width: 700px) {
     .certificate-page {
       display: block;
+      height: auto;
       min-height: 100svh;
       overflow: visible;
     }
@@ -301,6 +309,7 @@
     }
 
     .declaration-panel {
+      height: auto;
       min-height: 100svh;
       padding: 64px 9vw 86px;
     }
@@ -325,6 +334,7 @@
     }
 
     .institution-logo {
+      position: static;
       width: min(82vw, 360px);
       margin: 8px auto 0;
     }
@@ -360,7 +370,7 @@
     }
 
     .platform-footer {
-      height: 53px;
+      height: 42px;
     }
 
     .platform-footer-content {
@@ -403,5 +413,12 @@
     .platform-footer-content {
       font-size: 12px;
     }
+  }
+}
+
+
+@media (max-width: 700px) {
+  body {
+    overflow: auto;
   }
 }
