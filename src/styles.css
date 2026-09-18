@@ -1,25 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
- */
-
 @theme inline {
-  --font-sans: "Arial", "Helvetica Neue", sans-serif;
+  --font-sans: "Roboto", Arial, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -65,17 +52,16 @@
   --color-course: var(--course);
   --color-footer-surface: var(--footer-surface);
   --color-brand-yellow: var(--brand-yellow);
-  --color-brand-green: var(--brand-green);
 }
 
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.23 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.23 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
+  --popover-foreground: oklch(0.23 0 0);
   --primary: oklch(0.208 0.042 265.755);
   --primary-foreground: oklch(0.984 0.003 247.858);
   --secondary: oklch(0.968 0.007 247.896);
@@ -102,59 +88,36 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
-  --certificate-surface: oklch(0.958 0 0);
-  --certificate-text: oklch(0.64 0.008 245);
-  --course: oklch(0.7 0.12 222);
-  --footer-surface: oklch(0.855 0 0);
+  --certificate-surface: oklch(0.965 0 0);
+  --certificate-text: oklch(0.62 0.005 245);
+  --course: oklch(0.71 0.12 222);
+  --footer-surface: oklch(0.845 0 0);
   --brand-yellow: oklch(0.92 0.2 101);
-  --brand-green: oklch(0.42 0.08 143);
 }
 
 .dark {
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
 @layer base {
   * {
     border-color: var(--color-border);
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
   }
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
     margin: 0;
+    background-color: var(--certificate-surface);
+    color: var(--certificate-text);
     font-family: var(--font-sans);
+    font-weight: 400;
   }
 }
 
@@ -162,7 +125,7 @@
   .certificate-page {
     min-height: 100svh;
     display: grid;
-    grid-template-columns: minmax(410px, 33.45vw) 1fr;
+    grid-template-columns: 33.45% 66.55%;
     background: var(--certificate-surface);
     overflow: hidden;
   }
@@ -173,6 +136,7 @@
   }
 
   .portrait-panel img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -183,7 +147,7 @@
     position: relative;
     min-width: 0;
     min-height: 100svh;
-    padding: 55px 4vw 120px 2.9vw;
+    padding: 54px 4.1vw 92px 2.85vw;
     color: var(--certificate-text);
   }
 
@@ -194,90 +158,250 @@
     gap: 40px;
   }
 
-  .institution-copy p { margin: 0; }
-  .institution-name { font-size: 19px; line-height: 1.35; font-weight: 700; }
-  .institution-document { font-size: 18px; line-height: 1.5; }
-  .institution-address { margin-top: 6px !important; font-size: 12px; line-height: 1.35; }
+  .institution-copy p {
+    margin: 0;
+  }
+
+  .institution-name {
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: 500;
+  }
+
+  .institution-document {
+    margin-top: 3px !important;
+    font-size: 17px;
+    line-height: 1.25;
+    font-weight: 400;
+  }
+
+  .institution-address {
+    margin-top: 11px !important;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 400;
+  }
 
   .institution-logo {
-    width: clamp(245px, 18.4vw, 350px);
+    width: clamp(250px, 17.7vw, 338px);
     height: auto;
+    margin-top: 18px;
     object-fit: contain;
   }
 
-  .declaration-copy { margin-top: 67px; }
+  .declaration-copy {
+    margin-top: 105px;
+  }
+
   .declaration-copy h1 {
     margin: 0;
-    font-size: clamp(36px, 2.6vw, 50px);
-    line-height: 1.15;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: clamp(40px, 2.43vw, 46px);
+    line-height: 1.05;
+    font-weight: 300;
+    letter-spacing: -0.4px;
   }
 
   .course-line {
-    margin: 22px 0 0;
-    font-size: clamp(24px, 1.85vw, 35px);
-    line-height: 1.22;
+    margin: 24px 0 0;
+    font-size: clamp(27px, 1.67vw, 32px);
+    line-height: 1.18;
+    font-weight: 300;
     white-space: nowrap;
   }
 
-  .course-line strong { color: var(--course); font-weight: 700; }
-  .student-data { margin: 20px 0 0; font-size: 18px; line-height: 1.48; }
-  .student-data div { display: flex; min-width: 0; }
-  .student-data dt { margin-right: 5px; font-weight: 400; }
-  .student-data dd { margin: 0; font-weight: 700; overflow-wrap: anywhere; }
+  .course-line strong {
+    color: var(--course);
+    font-weight: 500;
+  }
+
+  .student-data {
+    margin: 25px 0 0;
+    font-size: 17px;
+    line-height: 1.48;
+  }
+
+  .student-data div {
+    display: flex;
+    min-width: 0;
+  }
+
+  .student-data dt {
+    margin-right: 5px;
+    font-weight: 300;
+  }
+
+  .student-data dd {
+    margin: 0;
+    font-weight: 500;
+    overflow-wrap: anywhere;
+  }
 
   .platform-footer {
     position: absolute;
+    left: 0;
     right: 0;
     bottom: 0;
-    width: min(100%, 520px);
     height: 54px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
     background: var(--footer-surface);
-    font-size: 14px;
   }
 
-  .bulb { color: var(--brand-yellow); font-size: 18px; }
-  .eduno { color: var(--foreground); }
-  .powered { color: var(--certificate-text); }
-  .hotsystems { color: var(--brand-yellow); font-weight: 700; }
-  .hotsystems span { color: var(--certificate-text); font-weight: 400; }
+  .platform-footer-content {
+    height: 100%;
+    padding-right: 4.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .footer-bulb {
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    color: var(--brand-yellow);
+    fill: var(--brand-yellow);
+    stroke-width: 1.6;
+  }
+
+  .eduno {
+    color: #303030;
+    font-weight: 400;
+  }
+
+  .powered {
+    color: #9a9a9a;
+    font-weight: 400;
+  }
+
+  .hotsystems {
+    font-size: 13px;
+  }
+
+  .hotsystems strong {
+    color: #ffb000;
+    font-weight: 700;
+  }
+
+  .hotsystems span {
+    color: #9a9a9a;
+    font-weight: 400;
+  }
 
   @media (max-width: 700px) {
-    .certificate-page { display: block; min-height: 100svh; overflow: visible; }
-    .portrait-panel { display: none; }
+    .certificate-page {
+      display: block;
+      min-height: 100svh;
+      overflow: visible;
+    }
+
+    .portrait-panel {
+      display: none;
+    }
+
     .declaration-panel {
       min-height: 100svh;
-      padding: 67px 16vw 95px;
+      padding: 64px 9vw 86px;
     }
-    .institution-heading { display: flex; flex-direction: column; gap: 29px; }
-    .institution-name { font-size: 22px; line-height: 1.38; }
-    .institution-document { font-size: 21px; line-height: 1.45; }
-    .institution-address { margin-top: 8px !important; font-size: 14px; line-height: 1.4; white-space: nowrap; }
-    .institution-logo { width: 100%; max-width: 390px; margin-left: 4%; }
-    .declaration-copy { margin-top: 61px; }
-    .declaration-copy h1 { max-width: 420px; font-size: 43px; line-height: 1.12; }
-    .course-line { margin-top: 25px; font-size: 30px; line-height: 1.42; white-space: normal; }
-    .course-line span { display: inline; }
-    .course-line strong { display: inline; }
-    .student-data { margin-top: 28px; font-size: 24px; line-height: 1.5; }
-    .student-data div { flex-wrap: wrap; }
-    .student-data div:last-child dd { width: 100%; }
-    .platform-footer { right: 16vw; width: 68vw; height: 53px; font-size: 16px; }
+
+    .institution-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .institution-name {
+      font-size: 20px;
+    }
+
+    .institution-document {
+      font-size: 19px;
+    }
+
+    .institution-address {
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .institution-logo {
+      width: min(82vw, 360px);
+      margin: 8px auto 0;
+    }
+
+    .declaration-copy {
+      margin-top: 58px;
+    }
+
+    .declaration-copy h1 {
+      font-size: clamp(34px, 10vw, 43px);
+      line-height: 1.08;
+    }
+
+    .course-line {
+      margin-top: 24px;
+      font-size: clamp(24px, 7vw, 30px);
+      line-height: 1.36;
+      white-space: normal;
+    }
+
+    .student-data {
+      margin-top: 27px;
+      font-size: clamp(18px, 5.4vw, 23px);
+      line-height: 1.48;
+    }
+
+    .student-data div {
+      flex-wrap: wrap;
+    }
+
+    .student-data div:last-child dd {
+      width: 100%;
+    }
+
+    .platform-footer {
+      height: 53px;
+    }
+
+    .platform-footer-content {
+      justify-content: center;
+      padding-right: 0;
+      font-size: 13px;
+    }
   }
 
   @media (max-width: 420px) {
-    .declaration-panel { padding-left: 8vw; padding-right: 8vw; }
-    .institution-name { font-size: 18px; }
-    .institution-document { font-size: 18px; }
-    .institution-address { font-size: 11px; }
-    .declaration-copy h1 { font-size: 35px; }
-    .course-line { font-size: 25px; }
-    .student-data { font-size: 20px; }
-    .platform-footer { right: 8vw; width: 84vw; font-size: 13px; }
+    .declaration-panel {
+      padding-left: 8vw;
+      padding-right: 8vw;
+    }
+
+    .institution-name {
+      font-size: 18px;
+    }
+
+    .institution-document {
+      font-size: 17px;
+    }
+
+    .institution-address {
+      font-size: 10px;
+    }
+
+    .declaration-copy h1 {
+      font-size: 34px;
+    }
+
+    .course-line {
+      font-size: 24px;
+    }
+
+    .student-data {
+      font-size: 19px;
+    }
+
+    .platform-footer-content {
+      font-size: 12px;
+    }
   }
 }
