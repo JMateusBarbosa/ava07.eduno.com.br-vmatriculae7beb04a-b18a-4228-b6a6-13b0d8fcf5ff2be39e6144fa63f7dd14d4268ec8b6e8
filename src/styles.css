@@ -183,7 +183,7 @@
     position: relative;
     min-width: 0;
     min-height: 100svh;
-    padding: 55px 6.65vw 120px 2.9vw;
+    padding: 55px 4vw 120px 2.9vw;
     color: var(--certificate-text);
   }
 
@@ -205,7 +205,7 @@
     object-fit: contain;
   }
 
-  .declaration-copy { margin-top: 47px; }
+  .declaration-copy { margin-top: 67px; }
   .declaration-copy h1 {
     margin: 0;
     font-size: clamp(36px, 2.6vw, 50px);
@@ -252,14 +252,14 @@
     .portrait-panel { display: none; }
     .declaration-panel {
       min-height: 100svh;
-      padding: 67px 9.3vw 95px;
+      padding: 67px 16vw 95px;
     }
-    .institution-heading { display: flex; flex-direction: column; gap: 26px; }
+    .institution-heading { display: flex; flex-direction: column; gap: 29px; }
     .institution-name { font-size: 22px; line-height: 1.38; }
     .institution-document { font-size: 21px; line-height: 1.45; }
     .institution-address { margin-top: 8px !important; font-size: 14px; line-height: 1.4; white-space: nowrap; }
-    .institution-logo { width: 80%; max-width: 360px; margin-left: 4%; }
-    .declaration-copy { margin-top: 51px; }
+    .institution-logo { width: 100%; max-width: 390px; margin-left: 4%; }
+    .declaration-copy { margin-top: 61px; }
     .declaration-copy h1 { max-width: 420px; font-size: 43px; line-height: 1.12; }
     .course-line { margin-top: 25px; font-size: 30px; line-height: 1.42; white-space: normal; }
     .course-line span { display: inline; }
@@ -267,7 +267,7 @@
     .student-data { margin-top: 28px; font-size: 24px; line-height: 1.5; }
     .student-data div { flex-wrap: wrap; }
     .student-data div:last-child dd { width: 100%; }
-    .platform-footer { right: 9.3vw; width: 81.4vw; height: 53px; font-size: 16px; }
+    .platform-footer { right: 16vw; width: 68vw; height: 53px; font-size: 16px; }
   }
 
   @media (max-width: 420px) {
