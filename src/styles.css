@@ -381,8 +381,23 @@
       flex-wrap: wrap;
     }
 
+    .student-data div:last-child {
+      flex-wrap: nowrap;
+      align-items: flex-start;
+    }
+
+    .student-data div:last-child dt {
+      flex: 0 0 auto;
+      margin-right: 4px;
+    }
+
     .student-data div:last-child dd {
+      flex: 1 1 auto;
+      min-width: 0;
       width: auto;
+      white-space: normal;
+      overflow-wrap: normal;
+      word-break: normal;
     }
 
     .platform-footer {
