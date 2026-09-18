@@ -45,7 +45,7 @@ function Index() {
             <div><dt>Aluno:</dt><dd>TIAGO ARAÚJO DA SILVA</dd></div>
             <div><dt>CPF:</dt><dd>702.521.932-02</dd></div>
             <div><dt>Matrícula:</dt><dd>017703EDC-514916</dd></div>
-            <div><dt>Controle:</dt><dd>e7beb04a-b18a-4228-<wbr />b6a6-13b0d8fcf5ff</dd></div>
+            <div className="control-row"><dt>Controle:</dt><dd><span className="control-prefix">e7beb04a-b18a-4228-b6a6-</span><wbr />13b0d8fcf5ff</dd></div>
           </dl>
         </div>
 
